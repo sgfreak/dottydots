@@ -1,0 +1,57 @@
+# Picom minimal compatível — animações via fading + blur + sombras
+backend = "glx"
+glx-no-stencil = true
+glx-no-rebind-pixmap = true
+fbo = true
+
+use-damage = true
+detect-client-opacity = true
+vsync = true
+
+# Shadows
+shadow = true
+shadow-radius = 8
+shadow-opacity = 0.50
+shadow-exclude = [
+  "class_g = 'Plank'",
+  "class_g = 'kitty'",
+  "window_type = 'dock'"
+]
+
+# Fading animations (fallback que funciona na maioria)
+fading = true
+fade-delta = 8
+fade-in-step = 0.02
+fade-out-step = 0.02
+
+# Blur
+blur-method = "dual_kawase"
+blur-strength = 6
+blur-background-exclude = [
+  "class_g = 'Plank'",
+  "class_g = 'kitty'",
+  "window_type = 'dock'"
+]
+
+# Rounded corners
+corner-radius = 10
+rounded-corners-exclude = [
+  "class_g = 'Plank'",
+  "class_g = 'xfce4-panel'"
+]
+
+inactive-opacity = 0.92
+active-opacity = 0.98
+frame-opacity = 0.98
+
+opacity-rule = [
+  "100:class_g = 'Plank'",
+  "85:class_g = 'Kitty'",
+  "90:class_g = 'Xfce4-panel'",
+  "90:class_g = 'Thunar'"
+]
+
+detect-rounded-corners = true
+
+log-level = "info"
+log-file = "~/.cache/picom.log"

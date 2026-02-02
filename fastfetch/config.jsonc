@@ -1,0 +1,157 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "kitty",
+        //Set your own source path
+        //"source": "/home/xtal/i3dotfiles/Pictures/ame.jpg",
+        "width": 40,
+	"padding": 
+	{
+	   "top": 3,
+	   "left": 5,
+	   "right": 8
+	}
+    },
+    "colors": {
+        "background": "#101012",
+        "foreground": "#EAE0D5",
+        "background-alt": "#2B1818",
+        "crust": "#441111",
+        "text": "#EAE0D5",
+        "primary": "#D9A86C",
+        "secondary": "#C05A5A",
+        "alert": "#F06161",
+        "overlay1": "#5E2A2A",
+        "disabled": "#7C6F64",
+        "red": "#E84C3D",
+        "green": "#A3D977",
+        "yellow": "#FAD874"
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
+        },
+        {
+            "type": "host",
+            "key": " PC",
+            "keyColor": "#D9A86C"  
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├",
+            "keyColor": "#D9A86C"  /* primary accent */
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰍛",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├󰍛",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "disk",
+            "key": "└ └",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": " OS",
+            "keyColor": "#FAD874" 
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├",
+            "keyColor": "#FAD874"
+        },
+        {
+            "type": "bios",
+            "key": "│ ├",
+            "keyColor": "#FAD874"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├󰏖",
+            "keyColor": "#FAD874"
+        },
+        {
+            "type": "shell",
+            "key": "└ └",
+            "keyColor": "#FAD874"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " DE",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "wmtheme",
+            "key": "│ ├󰉼",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "terminal",
+            "key": "└ └",
+            "keyColor": "#D9A86C"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌────────────────────Uptime / Age / DT────────────────────┐"
+        },
+        {
+            "type": "command",
+            "key": "  OS Age ",
+            "keyColor": "#C05A5A",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "  Uptime ",
+            "keyColor": "#C05A5A"
+        },
+        {
+            "type": "datetime",
+            "key": "  DateTime ",
+            "keyColor": "#C05A5A"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└─────────────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        }
+    ]
+}
+

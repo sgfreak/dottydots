@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+
+# Cerrar instancias previas de polybar
+killall -q polybar
+
+# Esperar a que se cierren completamente
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+# Lanzar la barra principal (cambia "main" por el nombre de tu barra en config)
+polybar cxys & 
+

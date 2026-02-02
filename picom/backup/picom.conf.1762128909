@@ -1,0 +1,62 @@
+# Picom base — ultra suave, com minimizar elegante
+backend = "glx"
+experimental-backends = true
+glx-no-stencil = true
+glx-no-rebind-pixmap = true
+fbo = true
+
+use-damage = true
+detect-client-opacity = true
+vsync = true
+
+# Sombras
+shadow = true
+shadow-radius = 10
+shadow-opacity = 0.40
+shadow-exclude = [
+  "class_g = 'Plank'",
+  "class_g = 'kitty'",
+  "window_type = 'dock'",
+  "window_type = 'desktop'"
+]
+
+# Fading (suave, ajustado)
+fading = true
+fade-delta = 18             # aumenta delta pra mais frames e suavidade
+fade-in-step = 0.012        # abrir mais rápido que fechar
+fade-out-step = 0.008       # minimizar/fechar mais lento e suave
+
+# Blur
+blur-method = "dual_kawase"
+blur-strength = 8
+blur-background-exclude = [
+  "class_g = 'Plank'",
+  "class_g = 'kitty'",
+  "window_type = 'dock'"
+]
+
+# Cantos arredondados
+corner-radius = 12
+rounded-corners-exclude = [
+  "class_g = 'Plank'",
+  "class_g = 'xfce4-panel'",
+  "window_type = 'dock'"
+]
+
+# Opacidade geral
+inactive-opacity = 0.94
+active-opacity = 0.995
+frame-opacity = 0.98
+
+opacity-rule = [
+  "100:class_g = 'Plank'",
+  "88:class_g = 'Kitty'",
+  "94:class_g = 'Xfce4-panel'",
+  "92:class_g = 'Thunar'"
+]
+
+detect-rounded-corners = true
+mark-wmwin-focused = true
+mark-ovredir-focused = true
+
+log-level = "info"

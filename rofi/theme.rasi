@@ -1,0 +1,137 @@
+/* --- theme.rasi CORRIGIDO --- */
+* {
+    bg-base:      #101010;
+    bg-alt:       #1a1a1a;
+    fg-text:      #e0def4;
+    fg-dim:       #909090;
+    accent:       #d72638; 
+    accent-alt:   #ff4050;
+    border-col:   #d72638;
+    
+    background-color: @bg-base;
+    text-color:       @fg-text;
+    
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 850px;
+    height: 500px;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    transparency: "real";
+}
+
+mainbox {
+    orientation: horizontal;
+    /* Usamos um "box" genérico e damos um ID para ele */
+    children: [ "box-image", "listbox" ];
+    background-color: transparent;
+}
+
+/* --- Definição da Lateral (ID: box-image) --- */
+#box-image {
+    expand: false;
+    width: 300px;
+    /* COR DE FUNDO TEMPORÁRIA (Para testar se abre) */
+    background-color: @bg-alt; 
+    
+    /* TENTE DESCOMENTAR A LINHA ABAIXO APENAS SE TIVER ROFI > 1.7.0 */
+    background-image: url("/home/xtal/.config/rofi/side.jpg", height);
+    
+    border: 0px 2px 0px 0px;
+    border-color: @border-col;
+    
+    /* Adiciona um ícone de texto grande caso a imagem falhe */
+    /* children: [ "textbox-icon" ]; */
+}
+
+/* Um elemento de texto para decorar caso a imagem não carregue */
+#textbox-icon {
+    content: "⛩️"; 
+    font: "HannariMincho 60";
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    text-color: @accent;
+    background-color: transparent;
+}
+
+/* --- Área do Menu --- */
+#listbox {
+    orientation: vertical;
+    children: [ "inputbar", "message", "listview" ];
+    background-color: transparent;
+    padding: 20px;
+    width: 550px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    text-color: @accent;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 0px 0px 15px 0px;
+    children: [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color: @accent;
+    background-color: transparent;
+    font: "HannariMincho 12";
+    margin: 0px 10px 0px 0px;
+}
+
+entry {
+    placeholder: "Pesquisar...";
+    placeholder-color: @fg-dim;
+    background-color: transparent;
+    text-color: @fg-text;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 7;
+    spacing: 5px;
+    scrollbar: false;
+    layout: vertical;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg-dim;
+    orientation: horizontal;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0px 10px 0px 0px;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold #d72638;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: #ffffff;
+}
+
+message {
+    background-color: @bg-alt;
+    padding: 10px;
+    border-radius: 4px;
+}
+textbox {
+    text-color: @fg-text;
+    background-color: transparent;
+}
