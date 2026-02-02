@@ -1,25 +1,22 @@
 configuration {
-    /* Modos habilitados */
+
     modi: "drun,run,window";
     
-    /* Ícones */
+
     show-icons: true;
-    icon-theme: "Tela"; /* Mude para o seu pacote de ícones preferido */
+    icon-theme: "Tela";
     
-    /* Fonte Solicitada */
+
     font: "HannariMincho 12";
     
-    /* Comportamento de seleção */
     drun-display-format: "{icon} {name}";
     display-drun: "⛩️ Apps";
     display-run: "📜 Cmd";
     display-window: "🪟 Win";
     
-    /* Interação */
     hover-select: true;
     me-select-entry: "";
     me-accept-entry: "MousePrimary";
 }
 
-/* Importa o tema visual */
 @theme "theme"
