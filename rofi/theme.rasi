@@ -1,4 +1,3 @@
-/* --- theme.rasi CORRIGIDO --- */
 * {
     bg-base:      #101010;
     bg-alt:       #1a1a1a;
@@ -27,29 +26,23 @@ window {
 
 mainbox {
     orientation: horizontal;
-    /* Usamos um "box" genérico e damos um ID para ele */
     children: [ "box-image", "listbox" ];
     background-color: transparent;
 }
 
-/* --- Definição da Lateral (ID: box-image) --- */
 #box-image {
     expand: false;
     width: 300px;
-    /* COR DE FUNDO TEMPORÁRIA (Para testar se abre) */
     background-color: @bg-alt; 
     
-    /* TENTE DESCOMENTAR A LINHA ABAIXO APENAS SE TIVER ROFI > 1.7.0 */
     background-image: url("/home/xtal/.config/rofi/side.jpg", height);
     
     border: 0px 2px 0px 0px;
     border-color: @border-col;
     
-    /* Adiciona um ícone de texto grande caso a imagem falhe */
     /* children: [ "textbox-icon" ]; */
 }
 
-/* Um elemento de texto para decorar caso a imagem não carregue */
 #textbox-icon {
     content: "⛩️"; 
     font: "HannariMincho 60";
@@ -59,7 +52,6 @@ mainbox {
     background-color: transparent;
 }
 
-/* --- Área do Menu --- */
 #listbox {
     orientation: vertical;
     children: [ "inputbar", "message", "listview" ];
